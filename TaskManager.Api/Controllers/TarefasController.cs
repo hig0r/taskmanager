@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TaskManager.Api.Dtos;
 using TaskManager.Domain.Services;
 
@@ -6,6 +7,7 @@ namespace TaskManager.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class TarefasController : ControllerBase
 {
     private readonly ITarefasService _tarefasService;
