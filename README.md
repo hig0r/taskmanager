@@ -17,6 +17,7 @@ Acessar no link `http://localhost:1234`.
 - A exclusão de tarefas deve ser auditada de alguma forma? Se sim, quais informações devem ser registradas? Ou talvez um soft delete já seria o suficiente?
 - Os comentários devem ser editáveis?
 - Os comentários podem ser excluídos?
+- Revisar permissões como: quem pode excluir tarefas? Apenas quem criou a tarefa? Gerentes podem excluir qualquer tarefa?
 ## Possivéis melhorias
 - Implementar mais testes (testes de integração / unitários)
 - Documentação
