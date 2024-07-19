@@ -49,6 +49,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUsuarioAutenticado, UsuarioAutenticado>();
 builder.Services.AddScoped<ITarefasService, TarefasService>();
 builder.Services.AddScoped<IProjetosService, ProjetosService>();

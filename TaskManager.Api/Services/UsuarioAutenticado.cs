@@ -1,10 +1,16 @@
-﻿using TaskManager.Domain.Entities;
+﻿using System.Security.Claims;
 using TaskManager.Domain.Services;
 
 namespace TaskManager.Api.Services;
 
 public class UsuarioAutenticado : IUsuarioAutenticado
 {
-    public int UsuarioId => 1;
-    public UsuarioFuncao Funcao => UsuarioFuncao.Nenhuma;
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public UsuarioAutenticado(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
+    public int UsuarioId => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 }
